@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      img {
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        overflow: hidden;
+      }
+      body {
+        background-color: red;
+        margin: 0px;
+      }
+    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Derrick Rose Bouncing Box</title>
+  </head>
+  <body>
+    <title>Bouncing Box</title>
+    <img
+      id="box"
+      src="https://static.wikia.nocookie.net/nba2k/images/f/f5/Derrick_Rose.png/revision/latest?cb=20241205235355"
+    />
+  </body>
+</html>
+
+<script>
+  var x = Math.random() * window.innerWidth;
+  var y = Math.random() * window.innerHeight;
+  var directionX = Math.random() >= 0.5 ? -1 : 1;
+  var directionY = Math.random() >= 0.5 ? -1 : 1;
+
+  function moveBox() {
+    document.getElementById("box").style.top = y + "px";
+    document.getElementById("box").style.left = x + "px";
+    x = x + directionX;
+    y = y + directionY;
+
+    if (y <= 0) {
+      directionY = 1;
+    }
+    if (y >= window.innerHeight - 100) {
+      directionY = -1;
+    }
+    if (x <= 0) {
+      directionX = 1;
+    }
+    if (x >= window.innerWidth - 100) {
+      directionX = -1;
+    }
+  }
+
+  setInterval(moveBox, 1);
+</script>
+DERRICK ROSE = 

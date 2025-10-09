@@ -29,22 +29,29 @@ $(function () {
     // TODO 1 - Enable the Grid
     // toggleGrid();
 
-
     // TODO 2 - Create Platforms
 
-
-
+    createPlatform(500, 0, 20, 290, "blue");
+    createPlatform(1350, 400, 50, 50, "red");
+    createPlatform(700, 0, 40, 300, "yellow");
+    createPlatform(900, 0, 60, 310, "green");
+    createPlatform(1100, 0, 80, 330, "pink");
 
     // TODO 3 - Create Collectables
 
+    createCollectable("D Rose", 1350, 50);
+    createCollectable("Michael Jordan", 1150, 90);
+    createCollectable("LeBron", 950, 130);
 
-
-    
     // TODO 4 - Create Cannons
 
+    createCannon("top", 200, 100);
+    createCannon("right", 300, 3000);
+    createCannon("bottom", 200, 400);
+    createCannon("left", 300, 2000);
 
-    
-    
+
+
     //////////////////////////////////
     // ONLY CHANGE ABOVE THIS POINT //
     //////////////////////////////////
