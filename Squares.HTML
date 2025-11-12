@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Squares.HTML</title>
+    <style>
+      img {
+        height: 100px;
+        width: 100px;
+      }
+      body {
+        background-color: red;
+        margin: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" height="800" width="2000"></canvas>
+  </body>
+</html>
+<script>
+  var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext("2d");
+  var x = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+  var y = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+  var directionX = [1, 2, 31, 4, 5, 6, 7, 8, 9, 10];
+  var directionY = [10, 2, 3, 14, 5, 6, 7, 8, 9, 10];
+
+  function moveCanvas() {
+    ctx.clearRect(0, 0, 2000, 2000);
+
+    for (var i = 0; i < 10; i = i + 1) {
+      x[i] = x[i] + directionX[i];
+      y[i] = y[i] + directionY[i];
+      ctx.fillRect(x[i], y[i], 50, 50);
+
+      if (y[i] <= 0) {
+        directionY[i] = 1;
+      }
+      if (y[i] >= window.innerHeight - 100) {
+        directionY[i] = -1;
+      }
+      if (x[i] <= 0) {
+        directionX[i] = 1;
+      }
+      if (x[i] >= window.innerWidth - 100) {
+        directionX[i] = -1;
+      }
+    }
+  }
+
+  setInterval(moveCanvas, 1);
+</script>
